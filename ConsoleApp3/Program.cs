@@ -15,6 +15,7 @@ namespace Lab4
                 Console.WriteLine();
                 Console.WriteLine("1 — Поздороваться");
                 Console.WriteLine("2 — Посчитать длину строки");
+                Console.WriteLine("3 — Показать текущее время");
                 Console.WriteLine("0 — Выход");
                 Console.Write("Ваш выбор: ");
 
@@ -28,6 +29,9 @@ namespace Lab4
                         break;
                     case "2":
                         CountLength();
+                        break;
+                    case "3":
+                        ShowTime();
                         break;
                     case "0":
                         Console.WriteLine("До свидания!");
@@ -63,6 +67,12 @@ namespace Lab4
             Console.Write("Введите строку: ");
             string text = Console.ReadLine();
             Console.WriteLine($"Длина строки: {text.Length} символов");
+        }
+
+        // НОВЫЙ МЕТОД — добавлен в ветке Addfunction
+        static void ShowTime()
+        {
+            Console.WriteLine($"Текущее время: {DateTime.Now:HH:mm:ss}");
         }
     }
 }
