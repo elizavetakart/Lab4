@@ -7,14 +7,40 @@ namespace Lab4
         static void Main(string[] args)
         {
             Console.Title = "Лабораторная работа №4 — Git";
-            Console.WriteLine("=== Программа для работы с Git ===");
-            Console.WriteLine();
 
-            Greet();
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=== Программа для работы с Git ===");
+                Console.WriteLine();
+                Console.WriteLine("1 — Поздороваться");
+                Console.WriteLine("2 — Посчитать длину строки");
+                Console.WriteLine("0 — Выход");
+                Console.Write("Ваш выбор: ");
 
-            Console.WriteLine();
-            Console.WriteLine("Нажмите любую клавишу для выхода...");
-            Console.ReadKey();
+                string choice = Console.ReadLine();
+                Console.WriteLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        Greet();
+                        break;
+                    case "2":
+                        CountLength();
+                        break;
+                    case "0":
+                        Console.WriteLine("До свидания!");
+                        return;
+                    default:
+                        Console.WriteLine("Неверный выбор.");
+                        break;
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("Нажмите любую клавишу...");
+                Console.ReadKey();
+            }
         }
 
         static void Greet()
@@ -30,6 +56,13 @@ namespace Lab4
             {
                 Console.WriteLine($"Привет, {name}! Добро пожаловать в Git.");
             }
+        }
+
+        static void CountLength()
+        {
+            Console.Write("Введите строку: ");
+            string text = Console.ReadLine();
+            Console.WriteLine($"Длина строки: {text.Length} символов");
         }
     }
 }
